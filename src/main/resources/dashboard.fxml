@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox spacing="20" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.DashboardController"
+      style="-fx-padding: 40">
+
+    <Label text="Panel Principal" style="-fx-font-size: 26px; -fx-font-weight: bold"/>
+
+    <Button text="Usuarios" prefWidth="250" onAction="#abrirUsuarios"/>
+    <Button text="Clases Deportivas" prefWidth="250" onAction="#abrirClases"/>
+    <Button text="Reservas" prefWidth="250" onAction="#abrirReservas"/>
+    <Button text="Entrenadores" prefWidth="250" onAction="#abrirEntrenadores"/>
+    <Button text="Membresías" prefWidth="250" onAction="#abrirMembresias"/>
+    <Button text="Reportes" prefWidth="250" onAction="#abrirReportes"/>
+</VBox>

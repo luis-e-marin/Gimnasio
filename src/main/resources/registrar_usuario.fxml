@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.RegistrarUsuarioController"
+      style="-fx-padding: 40">
+
+    <Label text="Registrar Usuario" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtId" promptText="ID Usuario"/>
+    <TextField fx:id="txtNombre" promptText="Nombre"/>
+    <TextField fx:id="txtEdad" promptText="Edad"/>
+    <TextField fx:id="txtTelefono" promptText="Teléfono"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Tipo de Usuario:"/>
+        <ComboBox fx:id="comboTipoUsuario" prefWidth="150"/>
+    </HBox>
+
+    <TextField fx:id="txtExtra" promptText="Programa/Dependencia/Ocupación"/>
+
+    <Button text="Registrar" prefWidth="250" onAction="#registrar"/>
+
+</VBox>

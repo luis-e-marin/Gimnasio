@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.EntrenadorViewController"
+      style="-fx-padding: 40">
+
+    <Label text="Gestión de Entrenadores" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtId" promptText="ID Entrenador"/>
+    <TextField fx:id="txtNombre" promptText="Nombre"/>
+    <TextField fx:id="txtEspecialidad" promptText="Especialidad"/>
+    <TextField fx:id="txtSalario" promptText="Salario"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Registrar" prefWidth="120" onAction="#registrarEntrenador"/>
+        <Button text="Modificar" prefWidth="120" onAction="#modificarEntrenador"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Eliminar" prefWidth="120" onAction="#eliminarEntrenador"/>
+        <Button text="Listar" prefWidth="120" onAction="#listarEntrenadores"/>
+    </HBox>
+
+    <TextArea fx:id="txtResultado" prefHeight="200" prefWidth="400" wrapText="true"/>
+</VBox>

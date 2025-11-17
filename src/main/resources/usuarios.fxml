@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.UsuarioViewController"
+      style="-fx-padding: 20">
+
+    <Label text="Gestión de Usuarios" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtId" promptText="ID"/>
+    <TextField fx:id="txtNombre" promptText="Nombre"/>
+    <TextField fx:id="txtEdad" promptText="Edad"/>
+    <TextField fx:id="txtTelefono" promptText="Teléfono"/>
+    <ComboBox fx:id="comboTipoUsuario" promptText="Tipo de usuario"/>
+
+    <Button text="Registrar" onAction="#registrarUsuario" prefWidth="200"/>
+    <Button text="Modificar" onAction="#modificarUsuario" prefWidth="200"/>
+    <Button text="Eliminar" onAction="#eliminarUsuario" prefWidth="200"/>
+    <Button text="Listar" onAction="#listarUsuarios" prefWidth="200"/>
+
+    <TextArea fx:id="txtResultado" prefHeight="200" prefWidth="400" wrapText="true"/>
+</VBox>

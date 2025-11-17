@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.ReservaViewController"
+      style="-fx-padding: 40">
+
+    <Label text="Registrar Reserva" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtIdUsuario" promptText="ID Usuario"/>
+    <TextField fx:id="txtNombreClase" promptText="Nombre Clase"/>
+
+    <Button text="Registrar Reserva" prefWidth="250" onAction="#registrarReserva"/>
+</VBox>

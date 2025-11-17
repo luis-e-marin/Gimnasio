@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.MembresiaViewController"
+      style="-fx-padding: 40">
+
+    <Label text="Asignar Membresía" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtIdUsuario" promptText="ID Usuario"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Plan:"/>
+        <ComboBox fx:id="comboPlan" prefWidth="150"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Duración:"/>
+        <ComboBox fx:id="comboTipo" prefWidth="150"/>
+    </HBox>
+
+    <Button text="Asignar" prefWidth="250" onAction="#asignar"/>
+</VBox>

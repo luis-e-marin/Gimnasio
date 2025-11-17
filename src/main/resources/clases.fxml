@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="uniquindio.edu.co.model.proyecto.viewController.ClaseViewController"
+      style="-fx-padding: 40">
+
+    <Label text="Clases Deportivas" style="-fx-font-size: 22px; -fx-font-weight: bold"/>
+
+    <TextField fx:id="txtNombreClase" promptText="Nombre Clase"/>
+    <TextField fx:id="txtCupo" promptText="Cupo Máximo"/>
+
+    <Button text="Registrar Clase" prefWidth="250" onAction="#registrarClase"/>
+</VBox>
