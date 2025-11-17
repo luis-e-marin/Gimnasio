@@ -4,11 +4,20 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Reserva implements Serializable {
+
+
     private String id;
     private ClaseDeportes clase;
     private Usuario usuario;
     private LocalDate fecha;
 
+    /**
+     *
+     * @param id
+     * @param clase
+     * @param usuario
+     * @param fecha
+     */
     public Reserva(String id, ClaseDeportes clase, Usuario usuario, LocalDate fecha) {
         this.id = id;
         this.clase = clase;

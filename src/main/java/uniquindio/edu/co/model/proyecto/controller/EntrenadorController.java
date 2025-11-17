@@ -8,6 +8,10 @@ import java.util.List;
 public class EntrenadorController {
     private Gym gym;
 
+    /**
+     *
+     * @param gym
+     */
     public EntrenadorController(Gym gym) {
         this.gym = gym;
     }

@@ -6,19 +6,23 @@ public class GymHolder {
 
     private static Gym gym;
 
+    /**
+     *
+     * @return
+     */
     public static Gym getGym() {
         if (gym == null) {
-            gym = GymPersistence.cargarGym(); // Se carga desde el archivo
+            gym = GymPersistence.cargarGym();
         }
         return gym;
     }
 
     public static void setGym(Gym g) {
         gym = g;
-        GymPersistence.guardarGym(gym); // Se guarda automáticamente
+        GymPersistence.guardarGym(gym);
     }
 
-    // Método opcional para guardar manualmente
+
     public static void guardar() {
         if (gym != null) {
             GymPersistence.guardarGym(gym);

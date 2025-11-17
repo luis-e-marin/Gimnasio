@@ -5,10 +5,18 @@ public class Administrador extends Usuario {
     private String rol; // Ejemplo: "Gerente", "Supervisor", "Coordinador"
     private double beneficio; // Por ejemplo, descuento en membresía o acceso especial
 
+    /**
+     *
+     * @param idUsuario
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param rol
+     */
     public Administrador(String idUsuario, String nombre, int edad, String telefono, String rol) {
         super(idUsuario, nombre, edad, telefono,rol);
         this.rol = rol;
-        this.beneficio = 0.20; // ejemplo de beneficio del 20%
+        this.beneficio = 0.20;
     }
 
     @Override

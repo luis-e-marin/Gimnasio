@@ -12,6 +12,13 @@ public class ClaseDeportes {
     private List<Usuario> usuariosReservados = new ArrayList<>();
     private Entrenador entrenador;
 
+    /**
+     *
+     * @param nombre
+     * @param tipoEjercicio
+     * @param horario
+     * @param cupoMaximo
+     */
     public ClaseDeportes(String nombre, String tipoEjercicio, LocalDateTime horario, int cupoMaximo) {
         this.nombre = nombre;
         this.tipoEjercicio = tipoEjercicio;

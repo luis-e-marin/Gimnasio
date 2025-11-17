@@ -3,6 +3,7 @@ package uniquindio.edu.co.model.proyecto.model;
 import java.io.Serializable;
 
 public abstract class Usuario implements Serializable {
+
     private String id;
     private String nombre;
     private int edad;
@@ -10,6 +11,14 @@ public abstract class Usuario implements Serializable {
     private Membresia membresia;
     private String Tipo;
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param Tipo
+     */
     public Usuario(String id, String nombre, int edad, String telefono,String Tipo) {
         this.id = id;
         this.nombre = nombre;

@@ -56,12 +56,10 @@ public class ReservaController {
         String idUsuario = usuarioSeleccionado.split(" - ")[0];
 
         try {
-            // Usar el método de GymController que acepta idUsuario y nombreClase
             controller.registrarReserva(idUsuario, claseSeleccionada);
 
             new Alert(Alert.AlertType.INFORMATION, "Reserva creada correctamente").show();
 
-            // Actualizar resultados y recargar ComboBoxes
             actualizarResultados();
             cargarUsuarios();
             cargarClases();

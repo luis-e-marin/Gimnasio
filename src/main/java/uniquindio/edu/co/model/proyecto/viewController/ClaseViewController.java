@@ -8,8 +8,8 @@ import uniquindio.edu.co.model.proyecto.utils.GymHolder;
 
 import java.time.LocalDateTime;
 
-public class ClaseViewController {
 
+public class ClaseViewController {
     @FXML private TextField txtNombreClase, txtCupo;
 
     @FXML

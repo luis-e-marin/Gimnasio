@@ -2,13 +2,21 @@ package uniquindio.edu.co.model.proyecto.model;
 
 public class Recepcionista extends Usuario {
 
-    private String turno; // Ejemplo: "Mañana", "Tarde", "Noche"
-    private double beneficio; // Por ejemplo, descuento o algún beneficio especial
+    private String turno;
+    private double beneficio;
 
+    /**
+     *
+     * @param idUsuario
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param turno
+     */
     public Recepcionista(String idUsuario, String nombre, int edad, String telefono, String turno) {
         super(idUsuario, nombre, edad, telefono, turno);
         this.turno = turno;
-        this.beneficio = 0.05; // ejemplo de beneficio del 5%
+        this.beneficio = 0.05;
     }
 
     @Override
@@ -26,9 +34,6 @@ public class Recepcionista extends Usuario {
         System.out.println("Membresía asignada a recepcionista con beneficio del " + (beneficio * 100) + "%");
     }
 
-    // ==========================
-    //        GETTERS / SETTERS
-    // ==========================
 
     public String getTurno() {
         return turno;

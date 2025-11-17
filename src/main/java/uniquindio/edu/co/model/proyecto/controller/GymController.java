@@ -6,7 +6,13 @@ import uniquindio.edu.co.model.proyecto.model.*;
 public class GymController {
     private Gym gym;
 
-    public GymController(Gym gym) { this.gym = gym; }
+    /**
+     *
+     * @param gym
+     */
+    public GymController(Gym gym) {
+        this.gym = gym;
+    }
 
     public void registrarUsuario(Usuario u) { gym.agregarUsuario(u); }
     public Usuario buscarUsuario(String id) throws Exception {

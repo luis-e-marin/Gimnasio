@@ -8,7 +8,13 @@ import java.time.LocalDate;
 public class UsuarioController {
     private Gym gym;
 
-    public UsuarioController(Gym gym) { this.gym = gym; }
+    /**
+     *
+     * @param gym
+     */
+    public UsuarioController(Gym gym) {
+        this.gym = gym;
+    }
 
     public boolean registrarUsuario(Usuario u) {
         if (u == null) return false;

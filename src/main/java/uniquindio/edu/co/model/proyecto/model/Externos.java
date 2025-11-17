@@ -3,6 +3,14 @@ package uniquindio.edu.co.model.proyecto.model;
 public class Externos extends Usuario {
     private String ocupacion;
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param ocupacion
+     */
     public Externos(String id, String nombre, int edad, String telefono, String ocupacion) {
         super(id, nombre, edad, telefono, ocupacion);
         this.ocupacion = ocupacion;

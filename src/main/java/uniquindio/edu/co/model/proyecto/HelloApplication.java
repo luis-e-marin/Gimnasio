@@ -6,7 +6,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class HelloApplication extends Application {
-
+    /**
+     *
+     * @param stage
+     */
     @Override
     public void start(Stage stage) {
         try {

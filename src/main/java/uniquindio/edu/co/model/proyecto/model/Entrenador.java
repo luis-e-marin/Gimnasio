@@ -8,6 +8,13 @@ public class Entrenador implements Serializable {
     private String especialidad;
     private double salario;
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param especialidad
+     * @param salario
+     */
     public Entrenador(String id, String nombre, String especialidad, double salario) {
         this.id = id;
         this.nombre = nombre;
