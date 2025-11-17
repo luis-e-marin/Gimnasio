@@ -10,26 +10,27 @@ public class ClaseController {
 
     private Gym gym;
 
+    /**
+     *
+     * @param gym
+     */
     public ClaseController(Gym gym) {
+
         this.gym = gym;
     }
 
-    // Registrar una clase
     public boolean registrarClase(String nombre, String tipoEjercicio, LocalDateTime horario, int cupoMaximo) {
         ClaseDeportes clase = new ClaseDeportes(nombre, tipoEjercicio, horario, cupoMaximo);
         return gym.agregarClase(clase);
     }
 
-    // Buscar clase por nombre
     public ClaseDeportes buscarClase(String nombre) {
         return gym.buscarClase(nombre);
     }
 
-    // Modificar clase
     public boolean modificarClase(String nombreOriginal, String nuevoNombre, String nuevoTipo, LocalDateTime nuevoHorario, int nuevoCupo) {
         ClaseDeportes clase = gym.buscarClase(nombreOriginal);
         if (clase == null) return false;
-
         clase.setNombre(nuevoNombre);
         clase.setTipoEjercicio(nuevoTipo);
         clase.setHorario(nuevoHorario);

@@ -6,7 +6,11 @@ import uniquindio.edu.co.model.proyecto.model.TipoMembresia;
 import java.time.LocalDate;
 
 public class Basica extends Membresia {
-
+    /**
+     *
+     * @param fechaInicio
+     * @param tipoMembresia
+     */
     public Basica(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
         super(fechaInicio, calcularFechaFin(fechaInicio, tipoMembresia), calcularPrecio(tipoMembresia), tipoMembresia);
     }

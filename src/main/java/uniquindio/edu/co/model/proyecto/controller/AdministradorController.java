@@ -9,23 +9,23 @@ public class AdministradorController {
 
     private Gym gym;
 
+    /**
+     *
+     * @param gym
+     */
     public AdministradorController(Gym gym) {
+
         this.gym = gym;
     }
 
-    // Registrar un administrador
     public boolean registrarAdministrador(Administrador admin) {
         if (admin == null) return false;
-
-        // Verificar que no exista un administrador con el mismo ID
         if (gym.getUsuarios().stream().anyMatch(u -> u.getId().equals(admin.getId()))) {
             return false;
         }
-
         return gym.agregarUsuario(admin);
     }
 
-    // Buscar administrador por ID
     public Administrador buscarAdministrador(String id) {
         return gym.getUsuarios().stream()
                 .filter(u -> u instanceof Administrador && u.getId().equals(id))
@@ -34,7 +34,6 @@ public class AdministradorController {
                 .orElse(null);
     }
 
-    // Modificar administrador
     public boolean modificarAdministrador(String id, String nombre, int edad, String telefono, String rol) {
         Administrador admin = buscarAdministrador(id);
         if (admin == null) return false;
@@ -43,19 +42,15 @@ public class AdministradorController {
         admin.setEdad(edad);
         admin.setTelefono(telefono);
         admin.setRol(rol);
-
         return true;
     }
 
-    // Eliminar administrador
     public boolean eliminarAdministrador(String id) {
         Administrador admin = buscarAdministrador(id);
         if (admin == null) return false;
-
         return gym.eliminarUsuario(admin.getId());
     }
 
-    // Listar todos los administradores
     public List<Administrador> listarAdministradores() {
         return gym.getUsuarios().stream()
                 .filter(u -> u instanceof Administrador)
@@ -63,7 +58,6 @@ public class AdministradorController {
                 .toList();
     }
 
-    // Getter / Setter del Gym
     public Gym getGym() {
         return gym;
     }

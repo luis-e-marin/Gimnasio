@@ -3,7 +3,11 @@ package uniquindio.edu.co.model.proyecto.model;
 import java.time.LocalDate;
 
 public class VIP extends Membresia {
-
+    /**
+     *
+     * @param fechaInicio
+     * @param tipoMembresia
+     */
     public VIP(LocalDate fechaInicio, TipoMembresia tipoMembresia) {
         super(fechaInicio, calcularFechaFin(fechaInicio, tipoMembresia), calcularPrecio(tipoMembresia), tipoMembresia);
     }

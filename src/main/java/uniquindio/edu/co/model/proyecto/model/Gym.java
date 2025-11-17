@@ -11,11 +11,15 @@ import java.util.List;
 public class Gym implements Serializable {
     private static final long serialVersionUID = 1L;
 
+
     private List<Usuario> usuarios;
     private List<Entrenador> entrenadores;
     private List<ClaseDeportes> clases;
     private List<Reserva> reservas;
 
+    /**
+     * Constructor
+     */
     public Gym() {
         this.usuarios = new ArrayList<>();
         this.entrenadores = new ArrayList<>();
@@ -87,9 +91,6 @@ public class Gym implements Serializable {
         return null;
     }
 
-    // -------------------------
-    // MÉTODOS DE CLASES
-    // -------------------------
     public boolean agregarClase(ClaseDeportes c) {
         if (c == null) return false;
         for (ClaseDeportes ex : clases) {
@@ -106,9 +107,6 @@ public class Gym implements Serializable {
         return null;
     }
 
-    // -------------------------
-    // MÉTODOS DE RESERVAS
-    // -------------------------
     public void registrarReserva(String idUsuario, String nombreClase) throws ReservaInvalidaException, CupoLlenoException {
         Usuario u = buscarUsuario(idUsuario);
         if (u == null) throw new ReservaInvalidaException("Usuario no encontrado");
@@ -122,9 +120,6 @@ public class Gym implements Serializable {
         c.agregarUsuario(u);
     }
 
-    // -------------------------
-    // MÉTODOS DE REPORTES
-    // -------------------------
     public double calcularIngresos() {
         double total = 0;
         for (Usuario u : usuarios) {
@@ -146,9 +141,6 @@ public class Gym implements Serializable {
         return popular;
     }
 
-    // -------------------------
-    // MÉTODOS DE PERSISTENCIA
-    // -------------------------
     public void guardarDatos(String rutaArchivo) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(rutaArchivo))) {
             oos.writeObject(this);
@@ -157,15 +149,12 @@ public class Gym implements Serializable {
 
     public static Gym cargarDatos(String rutaArchivo) throws IOException, ClassNotFoundException {
         File archivo = new File(rutaArchivo);
-        if (!archivo.exists()) return new Gym(); // Si no existe, devuelve Gym vacío
+        if (!archivo.exists()) return new Gym();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
             return (Gym) ois.readObject();
         }
     }
 
-    // -------------------------
-    // GETTERS Y SETTERS
-    // -------------------------
     public List<Usuario> getUsuarios() { return usuarios; }
     public void setUsuarios(List<Usuario> usuarios) { this.usuarios = usuarios; }
 

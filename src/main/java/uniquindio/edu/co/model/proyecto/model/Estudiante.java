@@ -6,6 +6,14 @@ public class Estudiante extends Usuario {
     private String programa;
     private double descuento = 0.10;
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param programa
+     */
     public Estudiante(String id, String nombre, int edad, String telefono, String programa) {
         super(id, nombre, edad, telefono,programa);
         this.programa = programa;

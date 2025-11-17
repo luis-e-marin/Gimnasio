@@ -4,12 +4,20 @@ import java.time.LocalDate;
 
 public abstract class Membresia {
 
+
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private double precio;
     private TipoMembresia tipoMembresia;
     private boolean activa;
 
+    /**
+     *
+     * @param fechaInicio
+     * @param fechaFin
+     * @param precio
+     * @param tipoMembresia
+     */
     public Membresia(LocalDate fechaInicio, LocalDate fechaFin, double precio, TipoMembresia tipoMembresia) {
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;

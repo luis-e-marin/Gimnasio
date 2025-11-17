@@ -4,6 +4,14 @@ public class TrabajadorUQ extends Usuario {
     private String dependencia;
     private double descuento = 0.15;
 
+    /**
+     *
+     * @param id
+     * @param nombre
+     * @param edad
+     * @param telefono
+     * @param dependencia
+     */
     public TrabajadorUQ(String id, String nombre, int edad, String telefono, String dependencia) {
         super(id, nombre, edad, telefono,dependencia);
         this.dependencia = dependencia;
