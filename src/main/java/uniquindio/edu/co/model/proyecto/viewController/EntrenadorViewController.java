@@ -6,7 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import uniquindio.edu.co.model.proyecto.controller.EntrenadorController;
 import uniquindio.edu.co.model.proyecto.model.Entrenador;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class EntrenadorViewController {
 
@@ -20,7 +20,7 @@ public class EntrenadorViewController {
 
     @FXML
     public void initialize() {
-        controller = new EntrenadorController(GymHolder.getGym());
+        controller = new EntrenadorController(OrganizadorGym.getGym());
     }
 
     @FXML

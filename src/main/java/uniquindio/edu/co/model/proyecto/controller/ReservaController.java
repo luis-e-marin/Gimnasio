@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 import uniquindio.edu.co.model.proyecto.model.ClaseDeportes;
 import uniquindio.edu.co.model.proyecto.model.Gym;
 import uniquindio.edu.co.model.proyecto.model.Usuario;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class ReservaController {
 
@@ -20,7 +20,7 @@ public class ReservaController {
 
     @FXML
     public void initialize() {
-        this.gym = GymHolder.getGym();
+        this.gym = OrganizadorGym.getGym();
         this.controller = new GymController(gym);
         cargarUsuarios();
         cargarClases();
@@ -29,8 +29,8 @@ public class ReservaController {
 
     private void cargarUsuarios() {
         ObservableList<String> listaUsuarios = FXCollections.observableArrayList();
-        for (Usuario u : gym.getUsuarios()) {
-            listaUsuarios.add(u.getId() + " - " + u.getNombre());
+        for (Usuario usuario : gym.getUsuarios()) {
+            listaUsuarios.add(usuario.getId() + " - " + usuario.getNombre());
         }
         comboUsuarios.setItems(listaUsuarios);
     }
@@ -47,35 +47,30 @@ public class ReservaController {
     public void crearReserva() {
         String usuarioSeleccionado = comboUsuarios.getValue();
         String claseSeleccionada = comboClases.getValue();
-
         if (usuarioSeleccionado == null || claseSeleccionada == null) {
             new Alert(Alert.AlertType.ERROR, "Debe seleccionar usuario y clase").show();
             return;
         }
 
         String idUsuario = usuarioSeleccionado.split(" - ")[0];
-
         try {
             controller.registrarReserva(idUsuario, claseSeleccionada);
-
             new Alert(Alert.AlertType.INFORMATION, "Reserva creada correctamente").show();
-
             actualizarResultados();
             cargarUsuarios();
             cargarClases();
-
-        } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (Exception exception) {
+            new Alert(Alert.AlertType.ERROR, exception.getMessage()).show();
         }
     }
 
     private void actualizarResultados() {
         StringBuilder sb = new StringBuilder();
         sb.append("Reservas actuales:\n\n");
-        for (ClaseDeportes c : gym.getClases()) {
-            sb.append(c.getNombre())
+        for (ClaseDeportes claseDeportes : gym.getClases()) {
+            sb.append(claseDeportes.getNombre())
                     .append(" - ")
-                    .append(c.getUsuariosReservados().size())
+                    .append(claseDeportes.getUsuariosReservados().size())
                     .append(" usuarios\n");
         }
         txtResultado.setText(sb.toString());

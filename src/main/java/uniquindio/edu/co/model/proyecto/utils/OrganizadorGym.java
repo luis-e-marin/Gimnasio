@@ -2,7 +2,7 @@ package uniquindio.edu.co.model.proyecto.utils;
 
 import uniquindio.edu.co.model.proyecto.model.Gym;
 
-public class GymHolder {
+public class OrganizadorGym {
 
     private static Gym gym;
 
@@ -12,20 +12,20 @@ public class GymHolder {
      */
     public static Gym getGym() {
         if (gym == null) {
-            gym = GymPersistence.cargarGym();
+            gym = ArchivoGym.cargarGym();
         }
         return gym;
     }
 
     public static void setGym(Gym g) {
         gym = g;
-        GymPersistence.guardarGym(gym);
+        ArchivoGym.guardarGym(gym);
     }
 
 
     public static void guardar() {
         if (gym != null) {
-            GymPersistence.guardarGym(gym);
+            ArchivoGym.guardarGym(gym);
         }
     }
 }

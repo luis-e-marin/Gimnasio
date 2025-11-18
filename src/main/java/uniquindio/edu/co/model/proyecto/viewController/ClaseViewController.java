@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import uniquindio.edu.co.model.proyecto.model.ClaseDeportes;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 import java.time.LocalDateTime;
 
@@ -21,7 +21,7 @@ public class ClaseViewController {
             if (nombre.isEmpty()) { new Alert(Alert.AlertType.ERROR, "Nombre es obligatorio").show(); return; }
 
             ClaseDeportes clase = new ClaseDeportes(nombre, "General", LocalDateTime.now(), cupo);
-            if (!GymHolder.getGym().agregarClase(clase)) {
+            if (!OrganizadorGym.getGym().agregarClase(clase)) {
                 new Alert(Alert.AlertType.ERROR, "Ya existe una clase con ese nombre").show();
                 return;
             }

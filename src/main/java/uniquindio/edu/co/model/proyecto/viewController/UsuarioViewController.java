@@ -10,7 +10,7 @@ import uniquindio.edu.co.model.proyecto.model.Externos;
 import uniquindio.edu.co.model.proyecto.model.Usuario;
 import uniquindio.edu.co.model.proyecto.model.Estudiante;
 import uniquindio.edu.co.model.proyecto.model.TrabajadorUQ;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class UsuarioViewController {
 
@@ -25,7 +25,7 @@ public class UsuarioViewController {
 
     @FXML
     public void initialize() {
-        controller = new GymController(GymHolder.getGym());
+        controller = new GymController(OrganizadorGym.getGym());
 
         // Inicializar comboTipoUsuario
         comboTipoUsuario.getItems().clear();

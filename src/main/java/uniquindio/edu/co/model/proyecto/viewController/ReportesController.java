@@ -9,7 +9,7 @@ import javafx.scene.control.TableView;
 import uniquindio.edu.co.model.proyecto.controller.GymController;
 import uniquindio.edu.co.model.proyecto.model.ClaseDeportes;
 import uniquindio.edu.co.model.proyecto.model.Gym;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class ReportesController {
 
@@ -24,7 +24,7 @@ public class ReportesController {
 
     @FXML
     public void initialize() {
-        this.gym = GymHolder.getGym();
+        this.gym = OrganizadorGym.getGym();
         this.controller = new GymController(gym);
 
         lblUsuariosRegistrados.setText("Usuarios registrados: " + gym.getUsuarios().size());

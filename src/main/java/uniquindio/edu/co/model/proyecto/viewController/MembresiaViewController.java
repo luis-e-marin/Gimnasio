@@ -6,7 +6,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import uniquindio.edu.co.model.proyecto.controller.GymController;
 import uniquindio.edu.co.model.proyecto.model.*;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 import java.time.LocalDate;
 
@@ -20,7 +20,7 @@ public class MembresiaViewController {
 
     @FXML
     public void initialize() {
-        controller = new GymController(GymHolder.getGym());
+        controller = new GymController(OrganizadorGym.getGym());
 
         // Inicializar combos
         comboPlan.getItems().addAll("BASICA", "PREMIUM", "VIP");

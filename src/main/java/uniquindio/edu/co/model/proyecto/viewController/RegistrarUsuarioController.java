@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import uniquindio.edu.co.model.proyecto.model.*;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class RegistrarUsuarioController {
 
@@ -19,7 +19,7 @@ public class RegistrarUsuarioController {
 
     @FXML
     public void initialize() {
-        gym = GymHolder.getGym();
+        gym = OrganizadorGym.getGym();
         comboTipoUsuario.setItems(FXCollections.observableArrayList("ESTUDIANTE", "TRABAJADOR_UQ", "EXTERNO"));
     }
 

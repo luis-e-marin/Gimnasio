@@ -4,7 +4,7 @@ import uniquindio.edu.co.model.proyecto.model.Gym;
 
 import java.io.*;
 
-public class GymPersistence {
+public class ArchivoGym {
 
     private static final String FILE_PATH = "gym_data.dat";
 
@@ -16,8 +16,8 @@ public class GymPersistence {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH))) {
             oos.writeObject(gym);
             System.out.println("Datos del gimnasio guardados correctamente.");
-        } catch (IOException e) {
-            System.err.println("Error al guardar los datos del gimnasio: " + e.getMessage());
+        } catch (IOException exception) {
+            System.err.println("Error al guardar los datos del gimnasio: " + exception.getMessage());
         }
     }
 

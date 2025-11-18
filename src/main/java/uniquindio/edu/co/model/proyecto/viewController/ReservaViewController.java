@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import uniquindio.edu.co.model.proyecto.controller.GymController;
 import uniquindio.edu.co.model.proyecto.exception.*;
 import uniquindio.edu.co.model.proyecto.model.ClaseDeportes;
-import uniquindio.edu.co.model.proyecto.utils.GymHolder;
+import uniquindio.edu.co.model.proyecto.utils.OrganizadorGym;
 
 public class ReservaViewController {
 
@@ -17,7 +17,7 @@ public class ReservaViewController {
 
     @FXML
     public void initialize() {
-        controller = new GymController(GymHolder.getGym());
+        controller = new GymController(OrganizadorGym.getGym());
     }
 
     @FXML
