@@ -17,9 +17,9 @@ public class OrganizadorGym {
         return gym;
     }
 
-    public static void setGym(Gym g) {
-        gym = g;
-        ArchivoGym.guardarGym(gym);
+    public static void setGym(Gym gym) {
+        OrganizadorGym.gym = gym;
+        ArchivoGym.guardarGym(OrganizadorGym.gym);
     }
 
 
