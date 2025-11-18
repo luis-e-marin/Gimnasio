@@ -30,12 +30,12 @@ public class ClaseDeportes {
         return usuariosReservados.size() < cupoMaximo;
     }
 
-    public void agregarUsuario(Usuario u) {
-        if (hayCupoDisponible()) usuariosReservados.add(u);
+    public void agregarUsuario(Usuario usuario) {
+        if (hayCupoDisponible()) usuariosReservados.add(usuario);
     }
 
-    public void removerUsuario(Usuario u) {
-        usuariosReservados.remove(u);
+    public void removerUsuario(Usuario usuario) {
+        usuariosReservados.remove(usuario);
     }
 
     public String getNombre() {
