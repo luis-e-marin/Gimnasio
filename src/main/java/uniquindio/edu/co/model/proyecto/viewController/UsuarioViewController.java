@@ -27,7 +27,6 @@ public class UsuarioViewController {
     public void initialize() {
         controller = new GymController(OrganizadorGym.getGym());
 
-        // Inicializar comboTipoUsuario
         comboTipoUsuario.getItems().clear();
         comboTipoUsuario.getItems().addAll("Estudiante", "Externo", "TrabajadorUQ");
     }
@@ -76,8 +75,8 @@ public class UsuarioViewController {
     @FXML
     public void modificarUsuario() {
         String id = txtId.getText();
-        Usuario u = controller.getGym().buscarUsuario(id);
-        if (u == null) {
+        Usuario usuario = controller.getGym().buscarUsuario(id);
+        if (usuario == null) {
             new Alert(Alert.AlertType.ERROR, "Usuario no encontrado").show();
             return;
         }
@@ -87,16 +86,14 @@ public class UsuarioViewController {
         String telefono = txtTelefono.getText();
         String tipo = comboTipoUsuario.getValue();
 
-        if (!nombre.isEmpty()) u.setNombre(nombre);
-        if (!telefono.isEmpty()) u.setTelefono(telefono);
+        if (!nombre.isEmpty()) usuario.setNombre(nombre);
+        if (!telefono.isEmpty()) usuario.setTelefono(telefono);
         if (!edadStr.isEmpty()) {
-            try { u.setEdad(Integer.parseInt(edadStr)); }
+            try { usuario.setEdad(Integer.parseInt(edadStr)); }
             catch (NumberFormatException e) { new Alert(Alert.AlertType.ERROR, "Edad inválida").show(); return; }
         }
         if (tipo != null) {
-            // Cambiar tipo de usuario (reescribir objeto si es necesario)
-            // Para simplificar, solo actualizamos el tipo como String
-            u.setTipo(tipo);
+            usuario.setTipo(tipo);
         }
 
         new Alert(Alert.AlertType.INFORMATION, "Usuario modificado correctamente").show();
