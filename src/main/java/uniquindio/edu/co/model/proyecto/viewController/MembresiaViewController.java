@@ -13,8 +13,8 @@ import java.time.LocalDate;
 public class MembresiaViewController {
 
     @FXML private TextField txtIdUsuario;
-    @FXML private ComboBox<String> comboPlan;   // Ej: Premium, VIP, etc.
-    @FXML private ComboBox<String> comboTipo;   // Ej: MENSUAL, TRIMESTRAL, ANUAL
+    @FXML private ComboBox<String> comboPlan;
+    @FXML private ComboBox<String> comboTipo;
 
     private GymController controller;
 
@@ -22,7 +22,6 @@ public class MembresiaViewController {
     public void initialize() {
         controller = new GymController(OrganizadorGym.getGym());
 
-        // Inicializar combos
         comboPlan.getItems().addAll("BASICA", "PREMIUM", "VIP");
         comboTipo.getItems().addAll("MENSUAL", "TRIMESTRAL", "ANUAL");
     }
