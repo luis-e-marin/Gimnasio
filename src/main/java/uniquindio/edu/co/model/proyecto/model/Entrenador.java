@@ -63,4 +63,6 @@ public class Entrenador implements Serializable {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+
 }

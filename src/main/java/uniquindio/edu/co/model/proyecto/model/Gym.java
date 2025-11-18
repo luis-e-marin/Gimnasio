@@ -29,31 +29,31 @@ public class Gym implements Serializable {
 
     public boolean verificarUsuarioPorId(String id) {
         if (id == null) return false;
-        for (Usuario u : usuarios) {
-            if (id.equals(u.getId())) return true;
+        for (Usuario usuario : usuarios) {
+            if (id.equals(usuario.getId())) return true;
         }
         return false;
     }
 
-    public boolean agregarUsuario(Usuario u) {
-        if (u == null) return false;
-        if (verificarUsuarioPorId(u.getId())) return false;
-        usuarios.add(u);
+    public boolean agregarUsuario(Usuario usuario) {
+        if (usuario == null) return false;
+        if (verificarUsuarioPorId(usuario.getId())) return false;
+        usuarios.add(usuario);
         return true;
     }
 
     public Usuario buscarUsuario(String id) {
         if (id == null) return null;
-        for (Usuario u : usuarios) {
-            if (id.equals(u.getId())) return u;
+        for (Usuario usuario : usuarios) {
+            if (id.equals(usuario.getId())) return usuario;
         }
         return null;
     }
 
     public boolean eliminarUsuario(String id) {
-        Usuario u = buscarUsuario(id);
-        if (u == null) return false;
-        usuarios.remove(u);
+        Usuario usuario = buscarUsuario(id);
+        if (usuario == null) return false;
+        usuarios.remove(usuario);
         return true;
     }
 
@@ -85,46 +85,50 @@ public class Gym implements Serializable {
     }
 
     public Entrenador buscarEntrenador(String id) {
-        for (Entrenador e : entrenadores) {
-            if (e.getId().equals(id)) return e;
+        for (Entrenador entrenador : entrenadores) {
+            if (entrenador.getId().equals(id)) return entrenador;
         }
         return null;
     }
 
-    public boolean agregarClase(ClaseDeportes c) {
-        if (c == null) return false;
-        for (ClaseDeportes ex : clases) {
-            if (ex.getNombre().equalsIgnoreCase(c.getNombre())) return false;
+    public boolean agregarClase(ClaseDeportes claseDeportes) {
+        if (claseDeportes == null) return false;
+        for (ClaseDeportes claseDeporte : clases) {
+            if (claseDeporte.getNombre().equalsIgnoreCase(claseDeportes.getNombre())) return false;
         }
-        clases.add(c);
+        clases.add(claseDeportes);
         return true;
     }
 
     public ClaseDeportes buscarClase(String nombre) {
-        for (ClaseDeportes c : clases) {
-            if (c.getNombre().equalsIgnoreCase(nombre)) return c;
+        for (ClaseDeportes claseDeportes : clases) {
+            if (claseDeportes.getNombre().equalsIgnoreCase(nombre)) return claseDeportes;
         }
         return null;
     }
 
     public void registrarReserva(String idUsuario, String nombreClase) throws ReservaInvalidaException, CupoLlenoException {
-        Usuario u = buscarUsuario(idUsuario);
-        if (u == null) throw new ReservaInvalidaException("Usuario no encontrado");
-        ClaseDeportes c = buscarClase(nombreClase);
-        if (c == null) throw new ReservaInvalidaException("Clase no encontrada");
-        if (!c.hayCupoDisponible()) throw new CupoLlenoException(c.getNombre());
+        Usuario usuario = buscarUsuario(idUsuario);
+
+        if (usuario == null) throw new ReservaInvalidaException("Usuario no encontrado");
+
+        ClaseDeportes claseDeportes = buscarClase(nombreClase);
+
+        if (claseDeportes == null) throw new ReservaInvalidaException("Clase no encontrada");
+
+        if (!claseDeportes.hayCupoDisponible()) throw new CupoLlenoException(claseDeportes.getNombre());
 
         String idReserva = "R-" + java.util.UUID.randomUUID().toString().substring(0, 8);
-        Reserva r = new Reserva(idReserva, c, u, LocalDate.now());
-        reservas.add(r);
-        c.agregarUsuario(u);
+        Reserva reserva = new Reserva(idReserva, claseDeportes, usuario, LocalDate.now());
+        reservas.add(reserva);
+        claseDeportes.agregarUsuario(usuario);
     }
 
     public double calcularIngresos() {
         double total = 0;
-        for (Usuario u : usuarios) {
-            if (u.getMembresia() != null)
-                total += u.getMembresia().getPrecio();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getMembresia() != null)
+                total += usuario.getMembresia().getPrecio();
         }
         return total;
     }
@@ -132,10 +136,10 @@ public class Gym implements Serializable {
     public ClaseDeportes claseMasPopular() {
         ClaseDeportes popular = null;
         int max = -1;
-        for (ClaseDeportes c : clases) {
-            if (c.getUsuariosReservados().size() > max) {
-                max = c.getUsuariosReservados().size();
-                popular = c;
+        for (ClaseDeportes claseDeportes : clases) {
+            if (claseDeportes.getUsuariosReservados().size() > max) {
+                max = claseDeportes.getUsuariosReservados().size();
+                popular = claseDeportes;
             }
         }
         return popular;
@@ -155,15 +159,32 @@ public class Gym implements Serializable {
         }
     }
 
-    public List<Usuario> getUsuarios() { return usuarios; }
-    public void setUsuarios(List<Usuario> usuarios) { this.usuarios = usuarios; }
 
-    public List<Entrenador> getEntrenadores() { return entrenadores; }
-    public void setEntrenadores(List<Entrenador> entrenadores) { this.entrenadores = entrenadores; }
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
+    }
 
-    public List<ClaseDeportes> getClases() { return clases; }
-    public void setClases(List<ClaseDeportes> clases) { this.clases = clases; }
+    public List<Entrenador> getEntrenadores() {
+        return entrenadores;
+    }
+    public void setEntrenadores(List<Entrenador> entrenadores) {
+        this.entrenadores = entrenadores;
+    }
 
-    public List<Reserva> getReservas() { return reservas; }
-    public void setReservas(List<Reserva> reservas) { this.reservas = reservas; }
+    public List<ClaseDeportes> getClases() {
+        return clases;
+    }
+    public void setClases(List<ClaseDeportes> clases) {
+        this.clases = clases;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
 }

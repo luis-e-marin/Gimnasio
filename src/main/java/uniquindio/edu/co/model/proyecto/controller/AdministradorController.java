@@ -20,7 +20,7 @@ public class AdministradorController {
 
     public boolean registrarAdministrador(Administrador admin) {
         if (admin == null) return false;
-        if (gym.getUsuarios().stream().anyMatch(u -> u.getId().equals(admin.getId()))) {
+        if (gym.getUsuarios().stream().anyMatch(usuario -> usuario.getId().equals(admin.getId()))) {
             return false;
         }
         return gym.agregarUsuario(admin);
@@ -28,8 +28,8 @@ public class AdministradorController {
 
     public Administrador buscarAdministrador(String id) {
         return gym.getUsuarios().stream()
-                .filter(u -> u instanceof Administrador && u.getId().equals(id))
-                .map(u -> (Administrador) u)
+                .filter(usuario -> usuario instanceof Administrador && usuario.getId().equals(id))
+                .map(usuario -> (Administrador) usuario)
                 .findFirst()
                 .orElse(null);
     }
@@ -37,7 +37,6 @@ public class AdministradorController {
     public boolean modificarAdministrador(String id, String nombre, int edad, String telefono, String rol) {
         Administrador admin = buscarAdministrador(id);
         if (admin == null) return false;
-
         admin.setNombre(nombre);
         admin.setEdad(edad);
         admin.setTelefono(telefono);
@@ -53,8 +52,8 @@ public class AdministradorController {
 
     public List<Administrador> listarAdministradores() {
         return gym.getUsuarios().stream()
-                .filter(u -> u instanceof Administrador)
-                .map(u -> (Administrador) u)
+                .filter(usuario -> usuario instanceof Administrador)
+                .map(usuario -> (Administrador) usuario)
                 .toList();
     }
 

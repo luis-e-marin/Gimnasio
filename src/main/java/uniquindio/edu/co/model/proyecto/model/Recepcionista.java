@@ -35,6 +35,18 @@ public class Recepcionista extends Usuario {
     }
 
 
+
+
+    @Override
+    public String toString() {
+        return "Recepcionista{" +
+                "nombre='" + getNombre() + '\'' +
+                ", turno='" + turno + '\'' +
+                ", beneficio=" + beneficio +
+                ", membresia=" + getMembresia() +
+                '}';
+    }
+
     public String getTurno() {
         return turno;
     }
@@ -49,15 +61,5 @@ public class Recepcionista extends Usuario {
 
     public void setBeneficio(double beneficio) {
         this.beneficio = beneficio;
-    }
-
-    @Override
-    public String toString() {
-        return "Recepcionista{" +
-                "nombre='" + getNombre() + '\'' +
-                ", turno='" + turno + '\'' +
-                ", beneficio=" + beneficio +
-                ", membresia=" + getMembresia() +
-                '}';
     }
 }

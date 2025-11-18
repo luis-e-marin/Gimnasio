@@ -19,7 +19,7 @@ public class LoginController {
         String usuario = txtUsuario.getText().trim();
         String pass = txtPassword.getText().trim();
 
-        if(usuario.equals("admin") && pass.equals("1234")) {
+        if(usuario.equals("admin") && pass.equals("123")) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/dashboard.fxml"));
                 Parent root = loader.load();

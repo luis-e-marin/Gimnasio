@@ -5,5 +5,7 @@ public class MembresiaVencidaException extends Exception {
      *
      * @param id
      */
-    public MembresiaVencidaException(String id) { super("Membresía vencida para usuario: " + id); }
+    public MembresiaVencidaException(String id) {
+        super("Membresía vencida para usuario: " + id);
+    }
 }
