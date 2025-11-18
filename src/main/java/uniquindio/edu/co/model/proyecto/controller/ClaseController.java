@@ -39,19 +39,16 @@ public class ClaseController {
         return true;
     }
 
-    // Eliminar clase
     public boolean eliminarClase(String nombre) {
         ClaseDeportes clase = gym.buscarClase(nombre);
         if (clase == null) return false;
         return gym.getClases().remove(clase);
     }
 
-    // Listar todas las clases
     public List<ClaseDeportes> listarClases() {
         return gym.getClases();
     }
 
-    // Getter y setter del gym
     public Gym getGym() {
         return gym;
     }

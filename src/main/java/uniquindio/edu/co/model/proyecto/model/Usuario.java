@@ -38,10 +38,12 @@ public abstract class Usuario implements Serializable {
     public abstract String getExtra();
 
     public Membresia setMembresia(Membresia membresia) {
+
         return membresia;
     }
 
     public Membresia getMembresia() {
+
         return membresia;
     }
 

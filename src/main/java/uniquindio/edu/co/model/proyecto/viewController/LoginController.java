@@ -28,7 +28,6 @@ public class LoginController {
                 stage.setScene(new Scene(root));
                 stage.show();
 
-                // Cerrar ventana de login
                 txtUsuario.getScene().getWindow().hide();
             } catch (Exception e) {
                 new Alert(Alert.AlertType.ERROR, "Error al abrir dashboard: " + e.getMessage()).show();
